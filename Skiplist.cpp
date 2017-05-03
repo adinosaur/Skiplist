@@ -135,7 +135,7 @@ void skiplist_insert(struct Skiplist* list, int64_t k, void* v)
 void skiplist_remove(struct Skiplist* list, int64_t k)
 {
 	assert(list);
-	assert(k != INT64_MIN);
+	assert(k != SKIPLIST_KEY_MIN && k != SKIPLIST_KEY_MAX);
 
 	struct SkillistNode* update[SKIPLIST_LEVEL_MAX+1];
 	for (int i = 0; i <= SKIPLIST_LEVEL_MAX; i++)
